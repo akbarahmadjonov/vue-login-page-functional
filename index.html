@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    
+    <div id="app">
+
+    <div class="read-book-head">
+
+        <div class="entrance">
+            
+            <div class="items">
+                <div class="hold">
+
+                <div class="lol">
+                    <a href="index.html"><h3 id="sign-in">SIGN IN</h3></a></a>
+                    <a v-bind:title='free' href="signup.html"><h3 id="sign-up">SIGN UP</h3></a>
+                </div>
+
+                   <div class="inputs">
+                        <label for="">Email</label>
+                        <input type="text" name="" id="">
+                        <label id="pass" for="">Password</label>
+                        <input v-on:keyup='openIt' :type='fieldType' name="" id="">
+                        <button v-if='showHid' v-on:click.prevent='switchUp' class="switchButton"><i class="far fa-eye-slash"></i></button>
+                        <button id="submit">SIGN IN</button> <br>
+                        <a href="#">Forgot password ?</a>
+                   </div>
+
+                </div>      <!--Hold Div-->
+            </div>   <!--Items Div-->
+
+      </div>    <!-- Entrance Div-->
+
+        </div>
+
+    </div>
+
+
+<script src="vue.js"></script>
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {
+            fieldType: 'password',
+            free: 'Sign Up Free',
+            showHid: false
+        },
+
+        methods: {
+            switchUp() {
+                this.fieldType = this.fieldType === 'password' ? 'text' : 'password';
+            },
+
+            openIt() {
+                this.showHid = !this.showHid
+            }
+        }
+    });
+
+</script>
+</body>
+</html>
